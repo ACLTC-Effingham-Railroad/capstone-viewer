@@ -16,9 +16,9 @@ class Capstone
     #add in correct details
   end
 
-  def student
-    Student.new(Unirest.get("http://localhost:3001/students").body)
-  end
+  # def student
+    # Student.new(Unirest.get("http://localhost:3001/students").body)
+  # end
 
   def self.find(id)
     Capstone.new(Unirest.get("http://localhost:3001/capstones/#{id}").body)

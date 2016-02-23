@@ -1,2 +1,5 @@
-<h1>Capstones#show</h1>
-<p>Find me in app/views/capstones/show.html.erb</p>
+<h4>Capstone Id: <%= @capstone.id %></h4>
+<h4>Capstone Name: <%= @capstone.name.titleize %></h4>
+<h4><%= @student.full_name %></h4>
+<h4>Description: <%= @capstone.description %></h4>
+<%= image_tag (@capstone.screenshot), class: "img-thumbnail" %>

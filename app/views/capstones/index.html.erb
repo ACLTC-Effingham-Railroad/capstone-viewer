@@ -46,11 +46,10 @@
    <tr>
      <td><%= capstone.id %></td>
      <td><%= capstone.name.titleize %></td>
-     <td><%= capstone.student %></td>
      <td><%= capstone.description %></td>
      <td><%= image_tag (capstone.screenshot), class: "img-thumbnail" %></td>
      <td>
-       <%= link_to "View", "/capstones/#{capstone.id}/locations", class: "btn btn-default" %>
+       <%= link_to "View", "/capstones/#{capstone.id}", class: "btn btn-default" %>
      </td>
      <td>
        <%= link_to "App", "#{capstone.url}", class: "btn btn-info" %>
