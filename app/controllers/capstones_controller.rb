@@ -15,6 +15,7 @@ class CapstonesController < ApplicationController
 
   def show
     @capstone = Capstone.find(params[:id])
+    @student = Unirest.get("http://localhost:3001")
   end
 
 
