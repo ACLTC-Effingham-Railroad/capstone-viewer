@@ -1,2 +1,61 @@
-<h1>Capstones#index</h1>
-<p>Find me in app/views/capstones/index.html.erb</p>
+<!-- <div class="btn-group">
+ --><!--  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Filter by Name <span class="caret"></span>
+ </button>
+ <ul class="dropdown-menu">
+   <li><a href="/capstones?filter=brand_name&filter_order=asc">By Name Ascending</a>
+   <li><a href="/brands?filter=brand_name&filter_order=desc">By Name Descending</a> 
+ </ul>
+</div>
+
+<div class="btn-group">
+ <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Filter by Created At <span class="caret"></span>
+ </button>
+ <ul class="dropdown-menu">
+   <li><a href="/brands?filter=created_at&filter_order=asc">By Creation Ascending</a>
+   <li><a href="/brands?filter=created_at&filter_order=desc">By Creation Descending</a> 
+ </ul>
+</div>
+
+<div class="btn-group">
+ <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Filter by Updated At <span class="caret"></span>
+ </button>
+ <ul class="dropdown-menu">
+   <li><a href="/brands?filter=updated_at&filter_order=asc">By Creation Ascending</a>
+   <li><a href="/brands?filter=updated_at&filter_order=desc">By Creation Descending</a> 
+ </ul>
+</div>
+ -->
+
+<table class="table table-hover">
+ <thead>
+   <tr>
+     <th>ID</th>
+     <th>Name</th>
+     <th>Coder</th>
+     <th>Description</th>
+     <th>Screenshot</th>
+     <th>View</th> 
+     <th>Link to App</th> 
+   </tr>
+ </thead>
+<% @capstones.each do |capstone| %>
+ <tbody>
+   <tr>
+     <td><%= capstone.id %></td>
+     <td><%= capstone.name.titleize %></td>
+     <td><%= capstone.student %></td>
+     <td><%= capstone.description %></td>
+     <td><%= image_tag (capstone.screenshot), class: "img-thumbnail" %></td>
+     <td>
+       <%= link_to "View", "/capstones/#{capstone.id}/locations", class: "btn btn-default" %>
+     </td>
+     <td>
+       <%= link_to "App", "#{capstone.url}", class: "btn btn-info" %>
+     </td> 
+   </tr>
+ </tbody>
+<% end %>
+</table>

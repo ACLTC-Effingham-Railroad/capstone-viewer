@@ -3,9 +3,9 @@ class CapstonesController < ApplicationController
     @capstones = Capstone.all
 
     if params[:search]
-      @capstones = @capstones.search(params[:search])
-    else
-      @capstones = @capstones.all
+    #   @capstones = Capstone.search(params[:search])
+    # # else
+      @capstones = Capstone.all
     end
 
     if params[:filter] && params[:filter_order]
@@ -15,5 +15,9 @@ class CapstonesController < ApplicationController
 
   def show
     @capstone = Capstone.find(params[:id])
+    @student = Unirest.get("http://localhost:3001")
   end
+
+
+
 end
